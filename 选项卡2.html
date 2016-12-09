@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+		#box div {
+			width:200px;
+			height:200px;
+			border:1px solid #000;
+		}
+		.show {
+			display: block;
+		}
+		.hide {
+			display: none;
+		}
+		.active {
+			background:red;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" value="按钮" />
+			<input type="button" value="按钮" />
+			<input type="button" value="按钮" />
+			<div>1111111</div>
+			<div class="hide">2222222</div>
+			<div class="hide">3333333</div>
+		</div>
+		<script src="JQ/jquery-3.1.1.min.js"></script>
+		<script>
+			$("#box input").click(function(){
+				$(this).addClass("active").siblings("input").removeClass("active");//点击的第当前个添加class，并且删除
+				//兄弟节点为input的class；
+				$("#box div").eq($(this).index("input")).show().siblings("div").hide();
+			})
+		</script>
+	</body>
+</html>

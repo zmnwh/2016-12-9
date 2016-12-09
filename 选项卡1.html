@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+		#box div {
+			width:200px;
+			height:200px;
+			border:1px solid #000;
+		}
+		.show {
+			display: block;
+		}
+		.hide {
+			display: none;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" value="按钮" />
+			<input type="button" value="按钮" />
+			<input type="button" value="按钮" />
+			<div>1111111</div>
+			<div class="hide">2222222</div>
+			<div class="hide">3333333</div>
+		</div>
+		<script src="JQ/jquery-3.1.1.min.js"></script>
+		<script>
+			$("#box input").click(function(){	//给所有的input添加点击事件
+				$("#box input").css("background","");//因为点击的是当前个，让当前个的样式改变，
+				//所以我们要清楚其全部的样式
+				$(this).css("background","#FFFF00");//让当前个的样式（背景颜色）发生改变；
+				$("#box div").hide();//将所有的div隐藏；
+				$("#box div").eq($(this).index("input")).show()//这段话翻译过来即为：
+				//所有div的*下标*（下标就是我们点击的当前个input的索引值）显示出来；
+				/*总结：
+					index():索引值（里面可以传指定的选择器);
+					eq():下标(里面可以传数字参数);
+					hide():隐藏段落;
+					show():显示段落;*/
+					
+			});
+		</script>
+	</body>
+</html>

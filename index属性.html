@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+		li {
+			width:100px;
+			height:100px;
+			background:red;
+			margin:5px;
+		}
+	</style>
+	</head>
+	<body>
+		<ul id="box">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script src="JQ/jquery-3.1.1.min.js"></script>
+		<script>
+			$("#box").children().click(function(){
+				alert($(this).index());
+			})
+			//index(),li的index是相对于它的父级；
+		</script>
+	</body>
+</html>
